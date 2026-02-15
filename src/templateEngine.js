@@ -9,6 +9,7 @@ function generateNewsletter(articles) {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "Asia/Kolkata",
   });
 
   const articleCards = articles

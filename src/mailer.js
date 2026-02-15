@@ -25,6 +25,7 @@ async function sendNewsletter(html, articleCount) {
     day: "numeric",
     month: "short",
     year: "numeric",
+    timeZone: "Asia/Kolkata",
   });
 
   const mailOptions = {
