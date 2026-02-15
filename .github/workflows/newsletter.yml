@@ -1,0 +1,39 @@
+name: Daily Auto Newsletter
+
+on:
+  # Run daily at 2:30 AM UTC = 8:00 AM IST
+  schedule:
+    - cron: "30 2 * * *"
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run newsletter pipeline
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: node index.js --now
+
+      - name: Save dedup data
+        run: |
+          git config user.name "AutoNews Bot"
+          git config user.email "bot@autonews.local"
+          git add data/sent.json
+          git diff --cached --quiet || git commit -m "📰 Update sent articles [skip ci]"
+          git push

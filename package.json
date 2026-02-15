@@ -1,0 +1,20 @@
+{
+  "name": "autonews",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "send-now": "node index.js --now",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.1",
+    "rss-parser": "^3.13.0"
+  }
+}
