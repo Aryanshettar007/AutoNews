@@ -1,9 +1,9 @@
 name: Daily Auto Newsletter
 
 on:
-  # Run daily at 2:30 AM UTC = 8:00 AM IST
+  # Test: Run at 1:38 AM IST = 8:08 PM UTC
   schedule:
-    - cron: "30 2 * * *"
+    - cron: "8 20 * * *"
   # Allow manual trigger from GitHub UI
   workflow_dispatch:
 
