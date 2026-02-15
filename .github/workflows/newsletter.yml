@@ -10,6 +10,7 @@ on:
 jobs:
   send-newsletter:
     runs-on: ubuntu-latest
+    environment: AutoRun
     permissions:
       contents: write
 
