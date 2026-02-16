@@ -1,10 +1,7 @@
 name: Daily Auto Newsletter
 
 on:
-  # Run daily at 8:00 AM IST = 2:30 AM UTC
-  schedule:
-    - cron: "30 2 * * *"
-  # Allow manual trigger from GitHub UI
+  # Triggered by cron-job.org at 8 AM IST daily
   workflow_dispatch:
 
 jobs:
