@@ -15,6 +15,7 @@ const FEED_URLS = [
   "https://insideevs.com/rss/articles/all/",
   "https://www.autonews.com/rss.xml",
   "https://auto.economictimes.indiatimes.com/rss/topstories",
+  "https://www.autocarpro.in/rssfeeds/all",
   "https://auto.hindustantimes.com/rss/trending",
 ];
 
